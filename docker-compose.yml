@@ -1,0 +1,5 @@
+version: '3'
+
+services:
+  django-env:
+    build: "./docker/base"
