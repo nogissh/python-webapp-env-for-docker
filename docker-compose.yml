@@ -20,13 +20,13 @@ services:
 
   # Main application
   app:
-    container_name: mainApp
+    container_name: app
     build: ./app
     working_dir: /home/app
     command: > 
       /bin/bash -c "source ~/.bash_profile && \
                     python manage.py migrate && \
-                    python manage.py runserver 0:80"
+                    python manage.py runserver 0:80" #example
     ports:
       - 8000:80
     depends_on:
