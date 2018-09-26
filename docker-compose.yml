@@ -1,6 +1,23 @@
 version: '3'
 
 services:
+
+  # Standard database
+  mysql:
+    container_name: mysql
+    image: mysql:8.0.11
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "rootpass"
+      MYSQL_DATABASE: "database"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "userpass"
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci
+    restart: always
+    volumes:
+      - "./docker/db/mysql:/var/lib/mysql"
+
   # Python Web Application Environment
   python-webapp-base:
     build: "./docker/base"
