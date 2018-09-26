@@ -18,6 +18,16 @@ services:
     volumes:
       - "./docker/db/mysql:/var/lib/mysql"
 
+  # Main application
+  app:
+    container_name: mainApp
+    build: ./app
+    ports:
+      - 8000:80
+    depends_on:
+      - python-webapp-base
+      - mysql
+
   # Python Web Application Environment
   python-webapp-base:
     build: "./docker/base"
