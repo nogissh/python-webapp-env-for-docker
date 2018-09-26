@@ -26,7 +26,7 @@ services:
     command: > 
       /bin/bash -c "source ~/.bash_profile && \
                     python manage.py migrate && \
-                    python manage.py runserver 0:80" #example
+                    supervisord -n" #example
     ports:
       - 8000:80
     depends_on:
