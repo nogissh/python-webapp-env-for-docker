@@ -1,4 +1,4 @@
-FROM python-webapp-env:latest
+FROM python-webapp-env_python-webapp-base:latest
 
 # Install inquired modules
 COPY ./requirements.txt /workspace/
