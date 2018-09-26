@@ -19,7 +19,9 @@ RUN apt-get update && \
       libbz2-dev \
       libreadline-dev \
       libffi-dev \
-      zlib1g-dev && \
+      zlib1g-dev \
+      sqlite3 \
+      libsqlite3-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # Set time zone JST
