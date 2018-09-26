@@ -1,1 +1,1 @@
-# Django Environment for Docker
+# Python Web Application Environment for Docker
