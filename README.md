@@ -1,5 +1,10 @@
 # Python Web Application Environment for Docker
 
+## Note
+- Python 3.7
+- Django (Standard web framework)
+- Nginx
+
 
 # How to use
 
