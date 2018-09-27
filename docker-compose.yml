@@ -18,17 +18,18 @@ services:
     volumes:
       - "./docker/db/mysql:/var/lib/mysql"
 
-  # Main application
-  app:
-    container_name: app
-    build: ./app
-    working_dir: /home/app
+  # For Django application
+  django-app:
+    container_name: django-app
+    build: ./django-app
+    working_dir: /home/docker/app
     command: > 
       /bin/bash -c "source ~/.bash_profile && \
                     python manage.py migrate && \
-                    python manage.py runserver 0:80" #example
+                    python manage.py collectstatic --noinput && \
+                    supervisord -n" #example
     ports:
-      - 8000:80
+      - 8001:80
     depends_on:
       - python-webapp-base
       - mysql

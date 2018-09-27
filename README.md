@@ -1,8 +1,8 @@
 # Python Web Application Environment for Docker
 
-## Note
+## None
 - Python 3.7
-- Django (Standard web framework)
+- Django or Flask
 - Nginx
 
 
@@ -19,32 +19,13 @@ Module name and version write down to `requirement.txt`.
 
 The case of using Django web framework. Sample of quick run commands below.
 ```
-django-admin startproject projectname ./app
-cd app
-python3 manage.py migrate
-python3 manage.py runserver
+django-admin startproject mysite django-app
+echo "STATIC_ROOT = './staticfiles'" >> django-app/mysite/settings.py
+docker-compose build
+docker-compose up -d
 ```
+
 
 ## Flask
 
-The case of using Flask web framework. Sample of quick run commands below.
-```
-cd app
-touch app.py
-vim app.py # -> edit code
-python3 app.py
-```
-
-Example code for Flask.
-```
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route('/)
-def index();
-  return "Hello, World!"
-
-if __name__ == "__main__":
-  app.run()
-```
+Coming soon...

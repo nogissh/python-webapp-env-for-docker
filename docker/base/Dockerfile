@@ -20,6 +20,7 @@ RUN apt-get update && \
       libreadline-dev \
       libffi-dev \
       zlib1g-dev \
+      libmysqlclient-dev \
       sqlite3 \
       libsqlite3-dev && \
     rm -rf /var/lib/apt/lists/*
