@@ -22,7 +22,7 @@ services:
   app:
     container_name: app
     build: ./app
-    working_dir: /home/app
+    working_dir: /home/docker/app
     command: > 
       /bin/bash -c "source ~/.bash_profile && \
                     python manage.py migrate && \

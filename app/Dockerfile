@@ -9,10 +9,10 @@ RUN /bin/bash -c "source ~/.bash_profile && \
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 COPY ./docker/nginx-app.conf /etc/nginx/sites-available/default
 COPY ./docker/supervisor-app.conf /etc/supervisor/conf.d/
-COPY ./docker /home/nginx-config
+COPY ./docker /home/docker
 
 # Copy project to image
-COPY . /home/app
+COPY . /home/docker/app
 
 # Expose port
 EXPOSE 80
