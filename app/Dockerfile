@@ -1,8 +1,14 @@
 FROM python-webapp-env_python-webapp-base:latest
 
+# Install additional required packages
+RUN apt-get update && \
+    apt-get upgrade -y && \ 	
+    apt-get install -y libmysqlclient-dev
+
 # Install inquired modules
 COPY ./requirements.txt /workspace/
 RUN /bin/bash -c "source ~/.bash_profile && \
+                  pip install update pip && \
                   pip install -r /workspace/requirements.txt"
 
 # Set server configs

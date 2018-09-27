@@ -26,6 +26,7 @@ services:
     command: > 
       /bin/bash -c "source ~/.bash_profile && \
                     python manage.py migrate && \
+                    python manage.py collectstatic --noinput && \
                     supervisord -n" #example
     ports:
       - 8000:80
