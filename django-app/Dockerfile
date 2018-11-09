@@ -1,4 +1,4 @@
-FROM python-webapp-env_python-webapp-base:latest
+FROM toshikiohnogi/python-webapp-environment:latest
 
 # Install additional required packages
 RUN apt-get update && \
